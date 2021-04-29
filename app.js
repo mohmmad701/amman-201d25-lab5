@@ -143,11 +143,11 @@ function multiplyArray(multArr) { //eslint-disable-line
 
     return  fiveelemant;
 }
-  
+testMultiplyArray(testArray);
   //testMultiplyArray(testArray);
 
 // Here is the test for multiplyArray(); uncomment it to run it
- testMultiplyArray(testArray);
+ 
 
 // Here is the test for multiplyArray(); uncomment it to run it
 // testMultiplyArray(testArray);
@@ -175,7 +175,30 @@ let testDynamicArray = [1,2,3,4,5]; //eslint-disable-line
 
 function multiplyAnyArray(dynamicArray) { //eslint-disable-line
 
+    let multiresult=1,sub_text="";
+    for(let i=0;i<dynamicArray.length;i++)
+    {
+        multiresult=multiply(multiresult,dynamicArray[i])[0];
+
+        if(i==dynamicArray.length-1)
+        {
+            sub_text+=dynamicArray[i];
+        }
+        else
+        {
+            sub_text+=dynamicArray[i]+',';
+        }
+
+
+    }
+    return [multiresult,`The numbers ${sub_text} have a product of 120.`]
 }
+
+// Here is the test for multiplyArray(); uncomment it to run it
+// testMultiplyAnyArray(testDynamicArray);
+testMultiplyAnyArray(testDynamicArray);
+multiplyAnyArray(testDynamicArray);
+console.log(multiplyAnyArray(testDynamicArray));
 
 // Here is the test for multiplyArray(); uncomment it to run it
 // testMultiplyAnyArray(testDynamicArray);
